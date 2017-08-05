@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-
+        //  \Yii::configure($this, require __DIR__ . '/../../config/admin.php');
         // custom initialization code goes here
     }
 }

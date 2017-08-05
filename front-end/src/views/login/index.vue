@@ -29,36 +29,36 @@
 
 <script>
 /* eslint-disable */
-    import { isWscnEmail } from '@/utils/validate';
+    // import { isWscnEmail } from '@/utils/validate';
 
     export default {
       name: 'login',
       data() {
-        const validateEmail = (rule, value, callback) => {
-          if (!isWscnEmail(value)) {
-            callback(new Error('请输入正确的合法邮箱'));
-          } else {
-            callback();
-          }
-        };
-        const validatePass = (rule, value, callback) => {
-          if (value.length < 6) {
-            callback(new Error('密码不能小于6位'));
-          } else {
-            callback();
-          }
-        };
+        // const validateEmail = (rule, value, callback) => {
+        //   if (!isWscnEmail(value)) {
+        //     callback(new Error('请输入正确的合法邮箱'));
+        //   } else {
+        //     callback();
+        //   }
+        // };
+        // const validatePass = (rule, value, callback) => {
+        //   if (value.length < 6) {
+        //     callback(new Error('密码不能小于6位'));
+        //   } else {
+        //     callback();
+        //   }
+        // };
         return {
           loginForm: {
-            email: 'admin@wallstreetcn.com',
-            password: '111111'
+            email: 'admin',
+            password: 'admin'
           },
           loginRules: {
             email: [
-                { required: true, trigger: 'blur', validator: validateEmail }
+                { required: true, trigger: 'blur' }
             ],
             password: [
-                { required: true, trigger: 'blur', validator: validatePass }
+                { required: true, trigger: 'blur' }
             ]
           },
           loading: false

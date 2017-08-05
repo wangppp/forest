@@ -14,11 +14,11 @@ class AuthController extends BaseApiController
 {
     public function actionIndex()
     {
-        $username = \Yii::$app->request->post('name');
+        $email = \Yii::$app->request->post('email');
         $password = \Yii::$app->request->post('password');
-        if($username == "admin" && $password == "admin")
+        if($email == "admin" && $password == "admin")
         {
-            return ['success'=>1,'msg'=>'100-token'];
+            return ['success'=>1,'token'=>'100-token'];
         }
         return ['success'=>0,'msg'=>'error'];
     }

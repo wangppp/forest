@@ -17,15 +17,15 @@
       computed: {
         permission_routes() {
           return [
-            { path: '/login', name: 'Fuck',component: Login, hidden: false },
-            { path: '/404', name: '404',component: Err404, hidden: false },
             {
               path: '/',
               component: Layout,
-              redirect: '/dashboard',
-              name: 'Home',
-              hidden: false,
-              children: [{ path: 'dashboard', component: dashboard }]
+              redirect: 'noredirect',
+              name: 'Example',
+              icon: 'zujian',
+              children: [
+                { path: '/',name: 'Form', icon: 'zonghe' }
+              ]
             }
           ];
         }

@@ -10,6 +10,7 @@ namespace app\modules\admin\controllers\api;
 use Yii;
 use yii\filters\auth\HttpBearerAuth;
 use app\modules\admin\controllers\BaseApiController;
+use app\modules\admin\models\User;
 
 class ItemController extends BaseApiController
 {
@@ -18,7 +19,7 @@ class ItemController extends BaseApiController
         $behaviors = parent::behaviors();
         if (Yii::$app->getRequest()->getMethod() !== 'OPTIONS') {
             $behaviors['authenticator'] = [
-                'class' => HttpBearerAuth::className(),
+                'class' => HttpBearerAuth::className()
             ];
         }
         return $behaviors;

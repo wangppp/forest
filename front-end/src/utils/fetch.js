@@ -19,7 +19,8 @@ service.interceptors.request.use(
     newconfig.url = 'http://localhost:9000/admin/api' + newconfig.url;
     if (store.getters.token) {
       let token = getToken();
-      newconfig.headers.common["Authorization"] = "Bearer ${token}"; // 让每个请求携带自定义token 请根据实际情况自行修改
+      newconfig.headers["Authorization"] = `Bearer ${token}`; // 让每个请求携带自定义token 请根据实际情况自行修改
+      console.log(newconfig);
     }
     return newconfig;
   },
